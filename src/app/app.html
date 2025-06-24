@@ -1,0 +1,38 @@
+<div
+  style="
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    max-width: 90%;
+    width: 700px;
+    min-height: 400px;
+    margin: 2rem auto;
+    padding: 2rem;
+    border-radius: 38px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    background: #f4eafc;
+  "
+>
+  <label for="ziffern-input">Ziffern zur Darstellung im C128 Barcode:</label>
+  <input
+    id="ziffern-input"
+    type="number"
+    pattern="[0-9]*"
+    inputmode="numeric"
+    [value]="eingabeZiffernFolge()"
+    (input)="update($any($event.target).value)"
+    placeholder="123456789"
+  />
+  <label for="c128cHc-input" style="margin-top: 1rem; display: block;">C128cHc Barcode Characters:</label>
+  <input
+    id="c128cHc-input"  
+    type="text"
+    [value]="outputString()"
+    readonly
+    placeholder="Barcode Characters"
+  />
+  <p style="margin: 0; color: #333; font-size: 2.7em; word-break: break-all; font-family: C128cHc, monospace; text-align: center;">
+    {{ outputString() }}
+  </p>
+</div>
