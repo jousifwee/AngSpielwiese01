@@ -1,0 +1,17 @@
+<h2>Aktualisierung mit Signal</h2>
+<!-- 
+ [(ngModel)]="eingabeZiffernFolge" 
+ dies bewirkt eine Zwei-Wege-Datenbindung,
+ sodass die Variable `eingabeZiffernFolge` automatisch aktualisiert wird,   
+
+ {{ outputString() }} 
+    bewirkt eine Ein-Wege-Datenbindung,
+    sodass die Ausgabe der Funktion `outputString()` automatisch aktualisiert wird,     
+    wenn sich die Eingabe ändert.
+-->
+
+<input id="input1" type="text" placeholder="123456789" [(ngModel)]="eingabeZiffernFolge" />
+<p>C128cHc Barcode <br> Characters: {{ outputString() }}</p>    
+<p style="font-family: C128cHc, monospace;">
+      {{ outputString() }}
+</p>

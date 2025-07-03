@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 @font-face {
-  font-family: 'C128cHc';
-  src: url('assets/fonts/C128cHc.ttf') format('truetype');
+  font-family: 'C128CHC';
+  src: url('assets/fonts/C128CHC.TTF') format('truetype');
   font-weight: normal;
 font-style: normal;
 }
@@ -11,8 +11,26 @@ label {
 }
 
 html {
-  font-size: 1.7em;
+  font-size: 1em;
 }
 input {
-  font-size: 1.7em;
+  font-size: 1em;
+}
+a[routerLink] {
+  color: #6c2eb7;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 0.4em 1em;
+  border-radius: 6px;
+  background: linear-gradient(90deg, #e0c3fc 0%, #8ec5fc 100%);
+  margin: 0 0.5em 0 0;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(108,46,183,0.08);
+  display: inline-block;
+}
+a[routerLink]:hover, a[routerLink].active {
+  background: linear-gradient(90deg, #8ec5fc 0%, #e0c3fc 100%);
+  color: #fff;
+  box-shadow: 0 4px 16px rgba(108,46,183,0.18);
+  text-decoration: underline;
 }

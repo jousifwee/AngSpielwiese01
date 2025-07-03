@@ -1,0 +1,13 @@
+<p>page3 works!</p>
+<style>
+textarea {
+    height: 5em;
+    width: 90%;
+    box-sizing: border-box;
+}
+</style>
+<textarea [(ngModel)]="plainText"  placeholder="Wert 1"></textarea><br>
+<button (click)="encode()">encode</button><button (click)="decode()">decode</button><br>
+
+<textarea [(ngModel)]="base64Text" placeholder="Wert 2"></textarea>
+<p>{{plainText()}}</p>

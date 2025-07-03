@@ -1,3 +1,7 @@
+<a routerLink="/page1">Seite 1</a>
+<a routerLink="/page2">Seite 2</a>
+<a routerLink="/page3">Seite 3</a>
+
 <div
   style="
     display: flex;
@@ -6,33 +10,57 @@
     gap: 1rem;
     max-width: 90%;
     width: 700px;
-    min-height: 400px;
-    margin: 2rem auto;
-    padding: 2rem;
-    border-radius: 38px;
+    min-height: 200px;
+    margin: 1rem auto;
+    padding: 1rem;
+    border-radius: 10px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-    background: #f4eafc;
+    background: #fafafa;
   "
 >
-  <label for="ziffern-input">Ziffern zur Darstellung im C128 Barcode:</label>
-  <input
-    id="ziffern-input"
-    type="number"
-    pattern="[0-9]*"
-    inputmode="numeric"
-    [value]="eingabeZiffernFolge()"
-    (input)="update($any($event.target).value)"
-    placeholder="123456789"
-  />
-  <label for="c128cHc-input" style="margin-top: 1rem; display: block;">C128cHc Barcode Characters:</label>
-  <input
-    id="c128cHc-input"  
-    type="text"
-    [value]="outputString()"
-    readonly
-    placeholder="Barcode Characters"
-  />
-  <p style="margin: 0; color: #333; font-size: 2.7em; word-break: break-all; font-family: C128cHc, monospace; text-align: center;">
-    {{ outputString() }}
-  </p>
+  <div style="display: flex; align-items: center; gap: 1em; margin-bottom: 1em">
+    <label for="ziffern-input" style="min-width: 280px"
+      >Ziffern zur Darstellung im C128c Code:</label
+    >
+    <input
+      id="ziffern-input"
+      type="number"
+      pattern="[0-9]*"
+      inputmode="numeric"
+      [value]="eingabeZiffernFolge()"
+      (input)="update($any($event.target).value)"
+      placeholder="123456789"
+      style="flex: 1"
+    />
+  </div>
+  <div style="display: flex; align-items: center; gap: 1em; margin-bottom: 1em">
+    <label for="c128cHc-input" style="min-width: 280px"
+      >C128cHc Barcode Characters:</label
+    >
+    <input
+      id="c128cHc-input"
+      type="text"
+      [value]="outputString()"
+      readonly
+      placeholder="Barcode Characters"
+    />
+  </div>
+
+  <div style="display: flex; align-items: center; gap: 1em; margin-bottom: 1em">
+    <label style="min-width: 280px">C128cHc Barcode Characters:</label>
+    <p
+      style="
+        margin: 0;
+        color: #333;
+        font-size: 1.5em;
+        word-break: break-all;
+        font-family: C128cHc, monospace;
+        text-align: center;
+      "
+    >
+      {{ outputString() }}
+    </p>
+  </div>
 </div>
+
+<router-outlet></router-outlet>

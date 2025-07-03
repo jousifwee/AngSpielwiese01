@@ -13,3 +13,10 @@ ng e2e
 
 ## Additional Resources
 
+you will need \src\assets\fonts\C128CHC.TTF
+
+
+
+mehrere Seiten zum Testen
+
+npx -p @angular/cli@20 ng new AngSpielwiese02 --skip-install --defaults --force --routing --strict --style scss 
